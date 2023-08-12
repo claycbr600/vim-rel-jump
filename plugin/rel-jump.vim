@@ -27,5 +27,5 @@ function! RelJump(key)
     endif
 endfunction
 
-nnoremap <silent> j :<C-U>call RelJump('j')<CR>
-nnoremap <silent> k :<C-U>call RelJump('k')<CR>
+nnoremap <expr> <silent> j v:count == 0 ? 'gj' : ':<C-U>call RelJump('j')<CR>'
+nnoremap <expr> <silent> k v:count == 0 ? 'gk' : ':<C-U>call RelJump('k')<CR>'
